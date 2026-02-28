@@ -451,7 +451,7 @@ function Contact() {
                                         onClick={() => contactus()}
                                         className="w-full bg-gold text-white border-none py-[10px] rounded-xl text-[16px] font-semibold tracking-wide hover:bg-gold-dark transition-colors"
                                     >
-                                        {loading ? <i className="fi fi-rr-spinner" style={{ animation: 'spin 1s linear infinite', display: 'inline-block' }}></i> : 'Send My Booking Request'}
+                                        {loading ? <i className="fi fi-rr-spinner animate-spin inline-block"></i> : 'Send My Booking Request'}
                                     </button>
                                     <p className="!text-[14px] text-text-muted text-center">We&apos;ll respond via WhatsApp or call within 30 minutes.</p>
                                 </div>
