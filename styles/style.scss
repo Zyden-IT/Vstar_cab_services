@@ -1,0 +1,117 @@
+.cardWrapper {
+    position: relative;
+    margin-top: 20px;
+}
+
+.cardContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.card {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 8px rgba(170, 170, 170, 0.25);
+    padding: 30px;
+    // transform-origin: top;
+
+    .cardLeft {
+        max-width: 500px;
+        width: 100%;
+
+        h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #121A1F;
+        }
+
+        p {
+            margin-top: 10px;
+            color: #535B60;
+            opacity: 0.8;
+        }
+    }
+
+    .cardRight {
+        aspect-ratio: 37 / 29;
+        width: 100%;
+        border-radius: 4px;
+        overflow: hidden;
+        position: relative;
+    }
+}
+
+@media (max-width: 767px) {
+    .card {
+        gap: 20px;
+        padding: 20px;
+
+        .cardLeft {
+
+            h3 {
+                font-size: 22px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+        }
+
+        .cardRight {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 590px) {
+    .card {
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 20px;
+        min-height: 340px;
+        height: 100%;
+
+        .cardLeft {
+            text-align: center;
+        }
+
+        .cardRight {
+            width: 100%;
+        }
+    }
+}
+
+
+.embla {
+    width: 100%;
+}
+
+.emblaViewport {
+    overflow: hidden;
+    width: 100%;
+}
+
+.emblaContainer {
+    display: flex;
+    padding: 0 10px;
+    will-change: transform;
+}
+
+.emblaSlide {
+    flex: 0 0 75%;
+    min-width: 0;
+}
+
+@media (max-width: 768px) {
+    .emblaSlide {
+        flex: 0 0 90%;
+    }
+}

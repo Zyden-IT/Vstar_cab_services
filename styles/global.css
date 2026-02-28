@@ -1,0 +1,219 @@
+@import "tailwindcss";
+
+/*----- For Tailwind -----*/
+@theme {
+  --color-gold: #E8960F;
+  --color-goldlight: #F5B93B;
+  --color-goldpale: #FEF3DC;
+  --color-golddark: #C07808;
+  --color-dark: #18171A;
+  --color-bodybg: #F7F5F1;
+  --color-cardbg: #FFFFFF;
+  --color-sectionalt: #EEEBE4;
+  --color-text: #18171A;
+  --color-textmid: #4A4845;
+  --color-textmuted: #8C8880;
+  --color-border: #E3DDD5;
+  --color-bordergold: rgba(232, 150, 15, 0.25);
+  /* --color-lightgray: #D9D9D9; */
+}
+
+:root {
+  --gold: #E8960F;
+  --gold-light: #F5B93B;
+  --gold-pale: #FEF3DC;
+  --gold-dark: #C07808;
+  --dark: #18171A;
+  --background: #F7F5F1;
+  --cardbackground: #FFFFFF;
+  --section-alt: #EEEBE4;
+  --text: #18171A;
+  --text-mid: #4A4845;
+  --text-muted: #8C8880;
+  --border: #E3DDD5;
+  --border-gold: rgba(232, 150, 15, 0.25);
+}
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+ul,
+ol,
+li,
+button {
+  font-family: "Outfit", sans-serif;
+}
+
+
+h1 {
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 50px;
+}
+
+h2 {
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 44px;
+}
+
+h3 {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 38px;
+}
+
+p,
+a {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1024px) {
+
+  h1 {
+    font-size: 34px;
+    line-height: 42px;
+  }
+
+  h2 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  h3 {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  p,
+  a {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+}
+
+input,
+textarea {
+  width: 100%;
+  background: var(--body-bg);
+  border: 1.5px solid var(--border);
+  color: var(--text);
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: "Outfit", sans-serif;
+  outline: none;
+  transition: border-color .2s;
+}
+
+.error {
+  border: 1.5px solid #ff0000 !important;
+  background: #fff6f6 !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #A6AFB5;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--gold);
+}
+
+.input-grp {
+  display: grid;
+  gap: 3px;
+}
+
+.input-grp label {
+  font-family: "Outfit", sans-serif;
+  display: block;
+  font-size: 12px;
+  color: var(--gold-dark);
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.primary-btn {
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #121A1F;
+  color: white;
+  padding: 12px 24px;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.primary-btn:hover {
+  background-color: #1d272d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+.secondary-btn {
+  font-size: 16px;
+  font-weight: 400;
+  background-color: white;
+  color: #121A1F;
+  padding: 12px 24px;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.secondary-btn:hover {
+  background-color: #f4f4f4;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
