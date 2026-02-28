@@ -204,7 +204,7 @@ function Contact() {
             contactUs(formData).then((res) => {
                 if (res.statusCode === 200) {
                     SwalService.Success(res.Message);
-                    // sendToWhatsApp();
+                    sendToWhatsApp();
                     resetData();
                 } else {
                     SwalService.Error(res.Message);
