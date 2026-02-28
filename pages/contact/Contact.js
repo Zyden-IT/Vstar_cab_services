@@ -12,16 +12,16 @@ import React, { useState } from 'react'
 function Contact() {
     const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
-        firstName: "abc",
-        lastName: "efg",
-        phoneNo: "9054527523",
-        email: "test@gmail.com",
-        pickup: "ahm",
-        drop: "ahm",
+        firstName: "",
+        lastName: "",
+        phoneNo: "",
+        email: "",
+        pickup: "",
+        drop: "",
         date: "",
         vehicle: "",
-        passangers: "5",
-        message: "qwe rty",
+        passangers: "",
+        message: "",
         subject: "Inquiry About Trip",
         toMail: "zyden.itsolutions@gmail.com",
     });
