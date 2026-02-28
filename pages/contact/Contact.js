@@ -23,7 +23,7 @@ function Contact() {
         passangers: "",
         message: "",
         subject: "Inquiry About Trip",
-        toMail: "zyden.itsolutions@gmail.com",
+        toMail: "vstarcabservice@gmail.com",
     });
 
     //------------------------------------------------------- validation rules and state--------------------------------------
@@ -170,7 +170,7 @@ function Contact() {
 
     //----------------------------------- apis ------------------------------
     const sendToWhatsApp = () => {
-        const phone = "919054527523";
+        const phone = "919313834439";
         const message =
             `*New Booking Request – Vstar Cab Services*
 
@@ -227,7 +227,7 @@ function Contact() {
             passangers: "",
             message: "",
             subject: "",
-            toMail: "zyden.itsolutions@gmail.com",
+            toMail: "vstarcabservice@gmail.com",
         });
     }
 
