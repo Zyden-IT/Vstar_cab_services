@@ -252,8 +252,8 @@ function Contact() {
                 title="Contact | Book Taxi & Traveller"
                 description="Contact Vstar Cab Services for quick cab booking, tempo traveller rental and tour taxi services. Call now for affordable and reliable travel solutions."
                 keyword="contact Vstar Cab Services, book cab Ahmedabad, taxi contact Gandhinagar, tempo traveller booking Ahmedabad"
-                canonicalUrl="https://www.vstarcabservices.com/contact"
-                ogImage="https://www.vstarcabservices.com/og-contact.jpg"
+                canonicalUrl="https://www.vstarcab.in/contact"
+                ogImage="https://www.vstarcab.in/og-home.png"
             />
             <div className='contact-page'>
                 <div

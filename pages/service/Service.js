@@ -14,8 +14,8 @@ function Service() {
                 title="Our Services | Cab Booking & Tempo Traveller Rental in Gujarat"
                 description="Explore our services including local cab booking, airport pickup & drop, outstation taxi service, and tempo traveller rental in Ahmedabad for family trips and group tours."
                 keyword="cab booking Gandhinagar, airport transfer Gandhinagar, outstation taxi Gandhinagar, tempo traveller for tour Gandhinagar, car rental services Ahmedabad"
-                canonicalUrl="https://www.vstarcabservices.com/services"
-                ogImage="https://www.vstarcabservices.com/og-services.jpg"
+                canonicalUrl="https://www.vstarcab.in/service"
+                ogImage="https://www.vstarcab.in/og-home.png"
             />
             <div className='service-page'>
                 <div

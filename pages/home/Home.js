@@ -40,8 +40,8 @@ function Home() {
         title="Vstar Cab Services | Reliable Cab & Tempo Traveller Rental in Gujarat"
         description="Vstar Cab Services offers affordable cab booking, tempo traveller rental, airport transfers, and outstation taxi services in Gandhinagar. Safe, comfortable & on-time travel guaranteed."
         keyword="cab service in Gandhinagar, tempo traveller in Gandhinagar, car rental Gandhinagar, airport taxi Gandhinagar, outstation cab service Gandhinagar, Vstar Cab Services"
-        canonicalUrl="https://www.vstarcabservices.com/"
-        ogImage="https://www.vstarcabservices.com/og-home.jpg"
+        canonicalUrl="https://www.vstarcab.in/"
+        ogImage="https://www.vstarcab.in/og-home.png"
       />
       <div className='home-page'>
         {/* ── HERO ── */}
