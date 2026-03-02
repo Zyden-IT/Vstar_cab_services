@@ -317,7 +317,10 @@ function Contact() {
                                     </div>
                                 </div>
 
-                                <div id='contact-form' className="fade-up bg-white border border-border rounded-3xl lg:p-[30px] p-4 md:p-5 shadow lg:w-[50%] w-full flex flex-col gap-[10px] md:gap-[20px]">
+                                <div
+                                    id='contact-form' className="fade-up bg-white border border-border rounded-3xl lg:p-[30px] p-4 md:p-5 shadow lg:w-[50%] w-full flex flex-col gap-[10px] md:gap-[20px]"
+                                    style={{ scrollMarginTop: '100px' }}
+                                >
                                     <div className='flex flex-col md:gap-[10px] gap-[5px]'>
                                         <h3 className="">Book a Ride or Get a Quote</h3>
                                         <p className="text-text-muted text-sm">Fill in the details and we&apos;ll get back to you with the best price.</p>
