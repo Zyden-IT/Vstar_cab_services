@@ -15,7 +15,6 @@ function Contact() {
         firstName: "",
         lastName: "",
         phoneNo: "",
-        email: "",
         pickup: "",
         drop: "",
         date: "",
@@ -71,16 +70,6 @@ function Contact() {
                 message: 'Please remove space from mobile number',
             },
         ],
-        email: [
-            {
-                type: "require",
-                message: Messages.CommonValidationMessages.FieldRequired.replace("{0}", "Email"),
-            },
-            {
-                type: "email",
-                message: 'Please enter valid email',
-            },
-        ],
         pickup: [
             {
                 type: "require",
@@ -107,15 +96,6 @@ function Contact() {
                     "date"
                 ),
             }
-        ],
-        message: [
-            {
-                type: "require",
-                message: Messages.CommonValidationMessages.FieldRequired.replace(
-                    "{0}",
-                    "Message"
-                ),
-            },
         ],
         passangers: [
             {
@@ -176,7 +156,6 @@ function Contact() {
 
 *Name:* ${formData.firstName} ${formData.lastName}
 *Phone:* ${formData.phoneNo}
-*Email:* ${formData.email}
 
 *Pickup:* ${formData.pickup}
 *Drop:* ${formData.drop}
@@ -184,7 +163,7 @@ function Contact() {
 *Vehicle:* ${formData.vehicle}
 *Passengers:* ${formData.passangers}
 
-*Message:* ${formData.message}`;
+${formData.message ? `*Message:* ${formData.message}` : ''}`;
 
         const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
@@ -219,7 +198,6 @@ function Contact() {
             firstName: "",
             lastName: "",
             phoneNo: "",
-            email: "",
             pickup: "",
             drop: "",
             date: "",
@@ -351,7 +329,7 @@ function Contact() {
                                                 className={`${formValidationState.error.lastName ? 'error' : ''}`}
                                             />
                                         </div>
-                                        <div className='input-grp'>
+                                        <div className='input-grp md:col-span-2'>
                                             <label>Mobile No.</label>
                                             <TextInput
                                                 type='number'
@@ -363,18 +341,7 @@ function Contact() {
                                                 className={`${formValidationState.error.phoneNo ? 'error' : ''}`}
                                             />
                                         </div>
-                                        <div className='input-grp'>
-                                            <label>Email Address</label>
-                                            <TextInput
-                                                type='email'
-                                                id="email"
-                                                name="email"
-                                                value={formData.email}
-                                                onChange={(e) => handleChange(e, 'email')}
-                                                placeholder='you@example.com'
-                                                className={`${formValidationState.error.email ? 'error' : ''}`}
-                                            />
-                                        </div>
+
                                         <div className='input-grp'>
                                             <label>Pickup Location</label>
                                             <TextInput
@@ -437,7 +404,7 @@ function Contact() {
                                             />
                                         </div>
                                         <div className='input-grp md:col-span-2'>
-                                            <label>Special Requirements / Message</label>
+                                            <label>Special Requirements / Message <span className='text-gray-400 !text-[10px]'>(Optional)</span></label>
                                             <textarea
                                                 id="message"
                                                 name="message"
