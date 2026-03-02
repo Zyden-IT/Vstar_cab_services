@@ -8,7 +8,7 @@ import PreLoader from "@/components/preLoader/PreLoader";
 
 export default function App({ Component, pageProps }) {
   const [showPreloader, setShowPreloader] = useState(() => {
-    if (typeof window === "undefined") return false;
+    if (typeof window === "undefined") return true;
     return !sessionStorage.getItem("preloader_shown");
   });
 
