@@ -2,20 +2,24 @@ import Layout from "@/shared/Layout";
 import "@/styles/global.css";
 import "@/styles/responsive.scss";
 import "@/styles/style.scss";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import '@flaticon/flaticon-uicons/css/all/all.css';
 import PreLoader from "@/components/preLoader/PreLoader";
 
 export default function App({ Component, pageProps }) {
-  const [showPreloader, setShowPreloader] = useState(() => {
-    if (typeof window === "undefined") return true;
-    return !sessionStorage.getItem("preloader_shown");
-  });
+  const [showPreloader, setShowPreloader] = useState(null);
+
+  useEffect(() => {
+    const alreadyShown = sessionStorage.getItem("preloader_shown");
+    setShowPreloader(!alreadyShown);
+  }, []);
 
   const handlePreloaderComplete = () => {
     sessionStorage.setItem("preloader_shown", "true");
     setShowPreloader(false);
   };
+
+  if (showPreloader === null) return null;
 
   return (
     <>
