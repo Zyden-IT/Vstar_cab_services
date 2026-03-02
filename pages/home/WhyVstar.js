@@ -255,7 +255,7 @@ function WhyVstar() {
                             <div data-animate>
                                 <div className="img-wrapper shadow-2xl">
                                     <img
-                                        src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=900&q=85"
+                                        src="/why.webp"
                                         alt="Luxury travel"
                                         className="w-full h-full object-cover"
                                     />

@@ -270,7 +270,7 @@ function About() {
                             </div>
                             <div className='flex flex-col md:flex-row gap-[20px] md:gap-[30px] lg:gap-[40px]'>
                                 <div
-                                    className="flex-1 relative h-fit"
+                                    className="flex-1 relative h-fit lg:aspect-[2/1.5] max-md:aspect-[2/1.5]"
                                 >
                                     <div
                                         className="absolute -top-4 -left-4 w-[80px] h-[80px] z-0 opacity-25"
@@ -297,14 +297,14 @@ function About() {
                                         <img
                                             src="rental.webp"
                                             alt="Our story"
-                                            className="w-full object-cover block"
+                                            className="w-full object-cover object-bottom lg:aspect-[2/1.5] max-md:aspect-[2/1.5] block"
                                         />
 
 
                                     </div>
                                 </div>
                                 <div
-                                    className="flex-1 min-w-[280px] flex flex-col justify-center"
+                                    className="flex-1 min-w-[380px] flex flex-col justify-center"
                                 >
                                     <span className='text-[24px] font-semibold text-gold'>How Vstar Began</span>
                                     <p className='text-gray-600 mt-[20px]'>

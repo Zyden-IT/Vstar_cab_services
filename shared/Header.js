@@ -12,7 +12,9 @@ const NAV_LINKS = [
 
 function Header() {
   const pathname = usePathname();
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(() =>
+    typeof window !== 'undefined' ? window.scrollY > 80 : false
+  );
   const [menuOpen, setMenuOpen] = useState(false);
   const [hasOpened, setHasOpened] = useState(false);
 
