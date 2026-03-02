@@ -1,5 +1,7 @@
 import { Routes } from '@/navigation/NavigationLib'
 import { Navigate } from '@/navigation/NavigationMethods'
+import { encryptAES } from '@/utils/Encryption'
+import { useRouter } from 'next/router'
 import React from 'react'
 
 const FLEET = [
@@ -59,7 +61,7 @@ const ArrowIcon = () => (
     </svg>
 )
 
-const FleetCard = ({ img, tag, name, seats, fuel, onBook }) => (
+const FleetCard = ({ img, tag, name, seats, fuel, navigateWithData }) => (
     <div className="group rounded-2xl overflow-hidden border border-black/[0.07] bg-white transition-all duration-300 hover:shadow-[0_16px_48px_rgba(0,0,0,0.10)] hover:-translate-y-1">
 
         <div className="h-[200px] overflow-hidden relative">
@@ -94,7 +96,7 @@ const FleetCard = ({ img, tag, name, seats, fuel, onBook }) => (
                     Available Now
                 </span>
                 <button
-                    onClick={onBook}
+                    onClick={() => navigateWithData(name)}
                     className="flex items-center gap-1.5 bg-[#0E0E0D] hover:bg-gold text-white text-[11px] font-medium tracking-[0.1em] uppercase px-4 py-2 rounded-full transition-all duration-300"
                 >
                     Book Now <ArrowIcon />
@@ -104,41 +106,50 @@ const FleetCard = ({ img, tag, name, seats, fuel, onBook }) => (
     </div>
 )
 
-const FleetSection = ({ setPage }) => (
-    <section className="fleet-section relative bg-[#FAFAF8] lg:py-[80px] md:py-[60px] py-[40px]">
-        <div className="container">
-            <div className='fleet-inner'>
-                <div className="flex items-center gap-3 mb-[15px]">
-                    <div className="w-8 h-px bg-gold" />
-                    <span className="text-[10px] font-medium tracking-[0.18em] uppercase text-gold">
-                        Our Fleet
-                    </span>
-                </div>
-                <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
-                    <h2
-                        className="text-[#0E0E0D] leading-[1.05]"
-                    >
-                        Choose Your <span className='text-gold'>Perfect Ride</span>
-                    </h2>
-                    <p className="text-gray-500 max-w-[440px] leading-relaxed">
-                        From compact sedans to large group carriers — we have the right vehicle for every journey.
-                    </p>
-                </div>
+function FleetSection() {
+    const router = useRouter();
 
-                {/* Grid */}
-                <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
-                    {FLEET.map((car, i) => (
-                        <FleetCard
-                            key={i}
-                            {...car}
-                            onBook={() => Navigate(Routes.contact)}
-                        />
-                    ))}
-                </div>
+    const navigateWithData = (car) => {
+        const enCar = encryptAES(car);
+        router.push(`/contact?data=${enCar}`);
+    }
 
+    return (
+        <section className="fleet-section relative bg-[#FAFAF8] lg:py-[80px] md:py-[60px] py-[40px]">
+            <div className="container">
+                <div className='fleet-inner'>
+                    <div className="flex items-center gap-3 mb-[15px]">
+                        <div className="w-8 h-px bg-gold" />
+                        <span className="text-[10px] font-medium tracking-[0.18em] uppercase text-gold">
+                            Our Fleet
+                        </span>
+                    </div>
+                    <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
+                        <h2
+                            className="text-[#0E0E0D] leading-[1.05]"
+                        >
+                            Choose Your <span className='text-gold'>Perfect Ride</span>
+                        </h2>
+                        <p className="text-gray-500 max-w-[440px] leading-relaxed">
+                            From compact sedans to large group carriers — we have the right vehicle for every journey.
+                        </p>
+                    </div>
+
+                    {/* Grid */}
+                    <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
+                        {FLEET.map((car, i) => (
+                            <FleetCard
+                                key={i}
+                                {...car}
+                                navigateWithData={navigateWithData}
+                            />
+                        ))}
+                    </div>
+
+                </div>
             </div>
-        </div>
-    </section>
-)
+        </section>
+    )
+}
 
 export default FleetSection

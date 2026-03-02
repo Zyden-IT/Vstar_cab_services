@@ -3,11 +3,13 @@ import Selector from '@/components/dropdown/CustomDropdown';
 import TextInput from '@/components/inputs/TextInput'
 import { contactUs } from '@/services/axios/apiServices/commomServices';
 import { SwalService } from '@/services/swal/SwalServices';
+import { decryptAES } from '@/utils/Encryption';
 import { Messages } from '@/utils/Message';
 import { isValidForm } from '@/utils/validations/CommonValidator';
 import moment from 'moment';
 import Link from 'next/link'
-import React, { useState } from 'react'
+import { useRouter } from 'next/router';
+import React, { useEffect, useState } from 'react'
 
 function Contact() {
     const [loading, setLoading] = useState(false);
@@ -24,6 +26,7 @@ function Contact() {
         subject: "Inquiry About Trip",
         toMail: "vstarcabservice@gmail.com",
     });
+    const router = useRouter();
 
     //------------------------------------------------------- validation rules and state--------------------------------------
 
@@ -223,6 +226,18 @@ ${formData.message ? `*Message:* ${formData.message}` : ''}`;
         { label: "Innova Crysta", value: "Innova Crysta" },
         { label: "Urbania", value: "Urbania" },
     ];
+
+    useEffect(() => {
+        if (!router.isReady) return;
+        const { data } = router.query;
+        if (data) {
+            const car = decryptAES(data);
+            setFormData((prev) => ({
+                ...prev,
+                vehicle: car
+            }))
+        }
+    }, [router.isReady]);
 
     return (
         <>
