@@ -11,7 +11,8 @@ export default function App({ Component, pageProps }) {
 
   useEffect(() => {
     const alreadyShown = sessionStorage.getItem("preloader_shown");
-    setShowPreloader(!alreadyShown);
+    const hasContactHash = window.location.hash === "#contact-form";
+    setShowPreloader(!alreadyShown && !hasContactHash);
   }, []);
 
   const handlePreloaderComplete = () => {
