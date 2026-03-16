@@ -24,12 +24,13 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      {showPreloader ? (
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+
+      {/* Preloader sits on top as a fixed overlay, only for real users */}
+      {showPreloader && (
         <PreLoader onComplete={handlePreloaderComplete} />
-      ) : (
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
       )}
     </>
   );
