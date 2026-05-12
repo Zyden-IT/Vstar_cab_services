@@ -4,8 +4,8 @@ import Header from "./Header.js";
 import Sidebar from "./Sidebar.js";
 import Footer from "./Footer.js";
 <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 />
 
 
@@ -34,7 +34,7 @@ const Layout = ({
     const isForgotPassword = router.pathname === '/forgotPassword/ForgotPassword'
 
     return (
-        <div className="page-layout w-full overflow-hidden">
+        <div className="page-layout w-full overflow-hidden opacity-0">
             {!is404Page && !isForgotPassword && !isSignup && !islogin && <Header />}
             <div className="page-content"
             >
